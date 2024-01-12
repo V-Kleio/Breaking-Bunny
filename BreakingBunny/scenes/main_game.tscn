@@ -9,9 +9,8 @@
 script = ExtResource("1_1cdad")
 
 [node name="Bunny" parent="." instance=ExtResource("3_56bpl")]
-z_index = 1
+z_index = 2
 position = Vector2(160, 456)
-collision_layer = 7
 collision_mask = 1
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_6js0r")]
@@ -29,6 +28,15 @@ offset_bottom = 79.0
 theme_override_font_sizes/font_size = 40
 text = "SCORE: 0"
 
+[node name="Collectible" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="drug" type="Label" parent="HUD"]
+offset_top = 72.0
+offset_right = 128.0
+offset_bottom = 95.0
+
 [node name="GameOver" type="CanvasLayer" parent="."]
 process_mode = 2
 
@@ -45,6 +53,11 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "PLAY AGAIN"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
 
 [node name="Lane3" parent="." instance=ExtResource("4_onicj")]
 collision_layer = 4

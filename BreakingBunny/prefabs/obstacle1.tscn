@@ -9,9 +9,9 @@ size = Vector2(39, 17.3333)
 position = Vector2(0, -1)
 scale = Vector2(3, 3)
 collision_layer = 0
-collision_mask = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 position = Vector2(0.666667, 0.666668)
 scale = Vector2(0.3, 0.3)

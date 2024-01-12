@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://s2bql4gu20id"]
+[gd_scene load_steps=21 format=3 uid="uid://s2bql4gu20id"]
 
 [ext_resource type="Script" path="res://scripts/bunny_man.gd" id="1_abfkc"]
 [ext_resource type="Texture2D" uid="uid://bvpbnbeojposi" path="res://textures/bunny.png" id="2_yccen"]
@@ -35,6 +35,38 @@ region = Rect2(1914, 0, 319, 400)
 atlas = ExtResource("2_yccen")
 region = Rect2(2233, 0, 319, 400)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwk0g"]
+atlas = ExtResource("2_yccen")
+region = Rect2(0, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4ple"]
+atlas = ExtResource("2_yccen")
+region = Rect2(319, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb7at"]
+atlas = ExtResource("2_yccen")
+region = Rect2(638, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsgdi"]
+atlas = ExtResource("2_yccen")
+region = Rect2(957, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu1ql"]
+atlas = ExtResource("2_yccen")
+region = Rect2(1276, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sqg5"]
+atlas = ExtResource("2_yccen")
+region = Rect2(1595, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45id0"]
+atlas = ExtResource("2_yccen")
+region = Rect2(1914, 800, 319, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu2a5"]
+atlas = ExtResource("2_yccen")
+region = Rect2(2233, 800, 319, 400)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5oq2"]
 animations = [{
 "frames": [{
@@ -65,13 +97,41 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwk0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4ple")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb7at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsgdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu1ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sqg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45id0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu2a5")
+}],
+"loop": true,
+"name": &"drugPower",
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofvxo"]
 size = Vector2(44, 48.75)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_abfkc")
 
@@ -81,7 +141,7 @@ position = Vector2(2, -55)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_y5oq2")
 autoplay = "default"
-frame_progress = 0.932173
+frame_progress = 0.264717
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 31.375)
