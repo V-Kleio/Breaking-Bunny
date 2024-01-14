@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_1cdad"]
 [ext_resource type="PackedScene" uid="uid://s2bql4gu20id" path="res://prefabs/bunny_man.tscn" id="3_56bpl"]
-[ext_resource type="PackedScene" uid="uid://cppsnb2hsoyhc" path="res://scenes/game_over_hud.tscn" id="4_2c1u8"]
+[ext_resource type="PackedScene" path="res://scenes/game_over_hud.tscn" id="4_2c1u8"]
 [ext_resource type="PackedScene" uid="uid://d0gsjxd8x054e" path="res://prefabs/parallax_background.tscn" id="4_6js0r"]
 [ext_resource type="PackedScene" uid="uid://bty5ycjg1yyt6" path="res://prefabs/Lane.tscn" id="4_onicj"]
 
