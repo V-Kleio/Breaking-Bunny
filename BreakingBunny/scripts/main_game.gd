@@ -188,6 +188,7 @@ func _create_collectible(collectible, collectibleX, collectibleY):
 	
 func _collect_collectible(body):
 	if body.name == "Bunny":
+		$Collect.play()
 		collectibleCounter += 1
 		for collectible in collectibles:
 			collectible.visible = false
@@ -197,7 +198,7 @@ func _generate_drugs():
 		var drug = bunnyDrug.instantiate()
 		var drugHeight = drug.get_node("Sprite2D").texture.get_height()
 		var drugScale = drug.get_node("Sprite2D").scale
-		var drugXPos = screenSize.x + score + randi_range(0, 100)
+		var drugXPos = screenSize.x + score + randi_range(20000, 30000)
 		var drugYPos = screenSize.y - (laneHeight * randi_range(1, 3) - Y_OFFSET)  - (drugHeight * drugScale.y / 2)
 		lastDrug = drug
 		_create_drug(drug, drugXPos, drugYPos)
@@ -232,16 +233,21 @@ func _game_over():
 	$GameOver/GameOverHud.set_highscore(high_score)
 	save_game()	
 	get_tree().paused = true
+	$Crash.play()
 	$GameOver.show()
 
 func _paused():
 	get_tree().paused = true
+	$SelectButton.play()
 	$PauseMenu.show()
 
 func _unpaused():
 	get_tree().paused = false
+	$SelectButton.play()
 	$PauseMenu.hide()
 
 func _return_main_menu():
+	$SelectButton.play()
+	await $SelectButton.finished
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

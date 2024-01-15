@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c71o6uqbpf4e6"]
+[gd_scene load_steps=12 format=3 uid="uid://c71o6uqbpf4e6"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_1cdad"]
 [ext_resource type="PackedScene" uid="uid://s2bql4gu20id" path="res://prefabs/bunny_man.tscn" id="3_56bpl"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bty5ycjg1yyt6" path="res://prefabs/Lane.tscn" id="4_onicj"]
 [ext_resource type="Texture2D" uid="uid://dxk1ibpvxre3j" path="res://textures/pausebutton2.png" id="6_8xrr5"]
 [ext_resource type="Texture2D" uid="uid://drjrux441u74v" path="res://textures/pause.png" id="7_mphjm"]
+[ext_resource type="AudioStream" uid="uid://knqisan081dd" path="res://audio/bgm.wav" id="8_463e8"]
+[ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="9_yubgg"]
+[ext_resource type="AudioStream" uid="uid://dn2kykwhimb8f" path="res://audio/crash.wav" id="10_x7mfu"]
+[ext_resource type="AudioStream" uid="uid://bja8w8ye3nmmk" path="res://audio/collect.wav" id="11_advog"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_1cdad")
@@ -109,6 +113,30 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 48
 text = "MAIN MENU"
 flat = true
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_463e8")
+volume_db = -30.0
+autoplay = true
+bus = &"Music"
+
+[node name="SelectButton" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("9_yubgg")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="Crash" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("10_x7mfu")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("11_advog")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="PauseButton/Button" to="." method="_paused"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_unpaused"]

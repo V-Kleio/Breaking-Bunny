@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://s2bql4gu20id"]
+[gd_scene load_steps=22 format=3 uid="uid://s2bql4gu20id"]
 
 [ext_resource type="Script" path="res://scripts/bunny_man.gd" id="1_abfkc"]
 [ext_resource type="Texture2D" uid="uid://bvpbnbeojposi" path="res://textures/bunny.png" id="2_yccen"]
+[ext_resource type="AudioStream" uid="uid://bajyxg8yj1qvr" path="res://audio/switch.wav" id="3_f6g3t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kym4e"]
 atlas = ExtResource("2_yccen")
@@ -147,3 +148,8 @@ frame_progress = 0.264717
 position = Vector2(2, 31.375)
 shape = SubResource("RectangleShape2D_ofvxo")
 debug_color = Color(1, 0.0156863, 0.0313726, 0.419608)
+
+[node name="SwitchLaneSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f6g3t")
+volume_db = -20.0
+bus = &"SFX"

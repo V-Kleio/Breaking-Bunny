@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cppsnb2hsoyhc"]
+[gd_scene load_steps=5 format=3 uid="uid://cppsnb2hsoyhc"]
 
 [ext_resource type="Script" path="res://scripts/game_over_hud.gd" id="1_ttmkv"]
 [ext_resource type="Texture2D" uid="uid://16nxd5e78ve" path="res://textures/gameover.png" id="2_6knqq"]
+[ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="3_t7pcw"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_m4e43"]
 color = Color(1, 1, 1, 1)
@@ -92,6 +93,12 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 48
 text = "MAIN MENU"
 flat = true
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_t7pcw")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/BackToMenu" to="." method="_on_back_to_menu_pressed"]

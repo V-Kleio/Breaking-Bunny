@@ -19,16 +19,20 @@ func _physics_process(delta):
 			2:
 				await get_tree().create_timer(0.1).timeout
 				collision_mask = 1
+				$SwitchLaneSound.play()
 			4:
 				await get_tree().create_timer(0.1).timeout
 				collision_mask = 2
+				$SwitchLaneSound.play()
 	
 	if Input.is_action_just_pressed("down") and is_on_floor():
 		match collision_mask:
 			1:
 				collision_mask = 2
+				$SwitchLaneSound.play()
 			2:
 				collision_mask = 4
+				$SwitchLaneSound.play()
 
 
 	move_and_slide()

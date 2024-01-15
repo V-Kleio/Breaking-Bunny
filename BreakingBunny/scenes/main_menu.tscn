@@ -1,16 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://7858uqxx406r"]
+[gd_scene load_steps=14 format=3 uid="uid://7858uqxx406r"]
 
-[ext_resource type="Texture2D" path="res://textures/mainmenu1.png" id="1_al312"]
+[ext_resource type="Texture2D" uid="uid://c5118xdatqwm1" path="res://textures/mainmenu1.png" id="1_al312"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_fv31s"]
-[ext_resource type="Texture2D" path="res://textures/mainmenu2.png" id="2_n8sxo"]
-[ext_resource type="Texture2D" path="res://textures/exit_button.png" id="3_sea0w"]
-[ext_resource type="Texture2D" path="res://textures/exit_button_copy.png" id="4_8c7x5"]
-[ext_resource type="Texture2D" path="res://textures/setting_button.png" id="5_y7vlf"]
-[ext_resource type="Texture2D" path="res://textures/setting_button_copy.png" id="6_q3rf6"]
-[ext_resource type="Texture2D" path="res://textures/collectibles_button.png" id="7_bc6w1"]
-[ext_resource type="Texture2D" path="res://textures/collectibles_button_copy.png" id="8_nd3nl"]
-[ext_resource type="Texture2D" path="res://textures/play_button.png" id="9_hi7ib"]
-[ext_resource type="Texture2D" path="res://textures/play_button_copy.png" id="10_mia8g"]
+[ext_resource type="Texture2D" uid="uid://dgawfo1clf1u7" path="res://textures/mainmenu2.png" id="2_n8sxo"]
+[ext_resource type="Texture2D" uid="uid://dnxt83oux4dmu" path="res://textures/exit_button.png" id="3_sea0w"]
+[ext_resource type="Texture2D" uid="uid://ctosrrjdypbsw" path="res://textures/exit_button_copy.png" id="4_8c7x5"]
+[ext_resource type="Texture2D" uid="uid://cdhsaqqyg5yy8" path="res://textures/setting_button.png" id="5_y7vlf"]
+[ext_resource type="Texture2D" uid="uid://64ocuceucfsc" path="res://textures/setting_button_copy.png" id="6_q3rf6"]
+[ext_resource type="Texture2D" uid="uid://1rwtniqudd1s" path="res://textures/collectibles_button.png" id="7_bc6w1"]
+[ext_resource type="Texture2D" uid="uid://b3wotapjgwb6c" path="res://textures/collectibles_button_copy.png" id="8_nd3nl"]
+[ext_resource type="Texture2D" uid="uid://b7gxvd7c4vks2" path="res://textures/play_button.png" id="9_hi7ib"]
+[ext_resource type="Texture2D" uid="uid://rwtx5w5bp72r" path="res://textures/play_button_copy.png" id="10_mia8g"]
+[ext_resource type="AudioStream" uid="uid://c6mkmt6dhhabo" path="res://audio/main_menu.wav" id="12_f1evn"]
+[ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="13_3rd4h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -77,6 +79,17 @@ layout_mode = 2
 texture_normal = ExtResource("9_hi7ib")
 texture_pressed = ExtResource("10_mia8g")
 texture_hover = ExtResource("10_mia8g")
+
+[node name="MainMenuBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_f1evn")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_3rd4h")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
