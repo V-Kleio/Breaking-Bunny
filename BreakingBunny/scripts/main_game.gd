@@ -32,6 +32,7 @@ var collectible1 = preload("res://prefabs/collectible.tscn")
 var collectibles: Array
 var lastCollectible
 var collectibleCounter: int = 0
+var totalCollectible
 
 # powerup variables
 # Bunny drug
@@ -39,6 +40,7 @@ var bunnyDrug = preload("res://prefabs/bunny_drugs.tscn")
 var bunnyDrugs: Array
 var lastDrug
 var drugCounter: int = 0
+var totalDrugs
 
 # Some value for the placement of the object
 const Y_OFFSET: int = 64
@@ -54,8 +56,12 @@ func _ready():
 	var save_file = FileAccess.open("user://save.data", FileAccess.READ)
 	if save_file!=null:
 		high_score = save_file.get_32()
+		totalCollectible = save_file.get_32()
+		totalDrugs = save_file.get_32()
 	else:
 		high_score = 0
+		totalCollectible = 0
+		totalDrugs = 0
 		save_game()
 	screenSize = get_window().size
 	laneHeight = 96
@@ -64,7 +70,8 @@ func _ready():
 func save_game():
 	var save_file = FileAccess.open("user://save.data", FileAccess.WRITE)
 	save_file.store_32(high_score)
-
+	save_file.store_32(totalCollectible)
+	save_file.store_32(totalDrugs)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -106,6 +113,7 @@ func _process(delta):
 			bunnyDrugs.erase(drug)
 	if score / SCORE_MODIFIER > high_score:
 		high_score = score / SCORE_MODIFIER
+	
 
 func _start_game():
 	score = 0
@@ -217,8 +225,10 @@ func _drug_end():
 	$Bunny.collision_layer = 1
 
 func _game_over():
+	totalCollectible += collectibleCounter
+	totalDrugs += drugCounter
 	$GameOver/GameOverHud.set_score(score / SCORE_MODIFIER)
 	$GameOver/GameOverHud.set_highscore(high_score)
-	save_game()
+	save_game()	
 	get_tree().paused = true
 	$GameOver.show()
