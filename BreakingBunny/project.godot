@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Bunny_Town"
-run/main_scene="res://scenes/main_game.tscn"
+config/name="Breaking Bunny"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://textures/cover.png"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/default_gravity=10000.0

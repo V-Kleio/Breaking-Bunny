@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://7858uqxx406r"]
+
+[ext_resource type="Texture2D" path="res://textures/mainmenu1.png" id="1_al312"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_fv31s"]
+[ext_resource type="Texture2D" path="res://textures/mainmenu2.png" id="2_n8sxo"]
+[ext_resource type="Texture2D" path="res://textures/exit_button.png" id="3_sea0w"]
+[ext_resource type="Texture2D" path="res://textures/exit_button_copy.png" id="4_8c7x5"]
+[ext_resource type="Texture2D" path="res://textures/setting_button.png" id="5_y7vlf"]
+[ext_resource type="Texture2D" path="res://textures/setting_button_copy.png" id="6_q3rf6"]
+[ext_resource type="Texture2D" path="res://textures/collectibles_button.png" id="7_bc6w1"]
+[ext_resource type="Texture2D" path="res://textures/collectibles_button_copy.png" id="8_nd3nl"]
+[ext_resource type="Texture2D" path="res://textures/play_button.png" id="9_hi7ib"]
+[ext_resource type="Texture2D" path="res://textures/play_button_copy.png" id="10_mia8g"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fv31s")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_al312")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n8sxo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -778.0
+offset_top = -357.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ExitButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("3_sea0w")
+texture_pressed = ExtResource("4_8c7x5")
+texture_hover = ExtResource("4_8c7x5")
+
+[node name="SettingButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("5_y7vlf")
+texture_pressed = ExtResource("6_q3rf6")
+texture_hover = ExtResource("6_q3rf6")
+
+[node name="CollectiblesButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("7_bc6w1")
+texture_pressed = ExtResource("8_nd3nl")
+texture_hover = ExtResource("8_nd3nl")
+
+[node name="PlayButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_hi7ib")
+texture_pressed = ExtResource("10_mia8g")
+texture_hover = ExtResource("10_mia8g")
+
+[connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CollectiblesButton" to="." method="_on_collectibles_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
