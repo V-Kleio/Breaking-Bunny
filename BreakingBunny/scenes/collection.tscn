@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://be3m47k7edqip"]
+
+[ext_resource type="Script" path="res://scripts/collection.gd" id="1_kc845"]
+[ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_7h6wx"]
+[ext_resource type="Texture2D" uid="uid://c7pq50eib6nh7" path="res://textures/title.png" id="2_brtxi"]
+[ext_resource type="Texture2D" uid="uid://42q48u5nqqyv" path="res://textures/back.png" id="3_n13iw"]
+[ext_resource type="Texture2D" uid="uid://0lf0jfmtjmu2" path="res://textures/back-hover.png" id="4_hlkhp"]
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kc845")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7h6wx")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_brtxi")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_right = 200.0
+grow_vertical = 0
+texture_normal = ExtResource("3_n13iw")
+texture_pressed = ExtResource("4_hlkhp")
+texture_hover = ExtResource("4_hlkhp")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
