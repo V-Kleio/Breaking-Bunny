@@ -1,18 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cppsnb2hsoyhc"]
+[gd_scene load_steps=4 format=3 uid="uid://cppsnb2hsoyhc"]
 
 [ext_resource type="Script" path="res://scripts/game_over_hud.gd" id="1_ttmkv"]
+[ext_resource type="Texture2D" uid="uid://16nxd5e78ve" path="res://textures/gameover.png" id="2_6knqq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81o25"]
-bg_color = Color(0.447059, 0.454902, 0.27451, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_536c3"]
-font_size = 45
-
-[sub_resource type="LabelSettings" id="LabelSettings_tjrwt"]
-font_size = 36
-
-[sub_resource type="LabelSettings" id="LabelSettings_epirc"]
-font_size = 36
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_m4e43"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 0
 
 [node name="GameOverHud" type="Control"]
 layout_mode = 3
@@ -23,11 +18,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ttmkv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.294118)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(192, 0)
+scale = Vector2(0.384, 0.412445)
+texture = ExtResource("2_6knqq")
+centered = false
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -37,87 +32,66 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -176.0
-offset_top = -196.0
+offset_top = -124.0
 offset_right = 176.0
-offset_bottom = 188.0
+offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_81o25")
-
-[node name="GameOver" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Game Over"
-label_settings = SubResource("LabelSettings_536c3")
+theme_override_styles/panel = SubResource("StyleBoxLine_m4e43")
 
 [node name="HighScore" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -129.0
-offset_right = 145.0
-offset_bottom = -66.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 328.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.999996, 0.807706, 0.0313258, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 36
 text = "High Score: 9999
 "
-label_settings = SubResource("LabelSettings_tjrwt")
 
 [node name="Score" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -104.0
+layout_mode = 0
+offset_left = 80.0
 offset_top = 120.0
-offset_right = 104.0
+offset_right = 288.0
 offset_bottom = 176.0
-grow_horizontal = 2
+theme_override_colors/font_color = Color(0.999996, 0.807706, 0.0313258, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 36
 text = "Score: 9999"
-label_settings = SubResource("LabelSettings_epirc")
 justification_flags = 161
 
 [node name="Retry" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = -4.0
-offset_right = 104.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "Retry"
+layout_mode = 0
+offset_left = 47.0
+offset_top = 234.0
+offset_right = 305.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.999996, 0.807706, 0.0313258, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94127, 0.771931, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 48
+text = "TRY AGAIN"
+flat = true
 
 [node name="BackToMenu" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = 88.0
-offset_right = 104.0
-offset_bottom = 160.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "Main Menu"
+layout_mode = 0
+offset_left = 26.0
+offset_top = 318.0
+offset_right = 320.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(0.999996, 0.807706, 0.0313258, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.94127, 0.771931, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 48
+text = "MAIN MENU"
+flat = true
 
 [connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/BackToMenu" to="." method="_on_back_to_menu_pressed"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c71o6uqbpf4e6"]
+[gd_scene load_steps=8 format=3 uid="uid://c71o6uqbpf4e6"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_1cdad"]
 [ext_resource type="PackedScene" uid="uid://s2bql4gu20id" path="res://prefabs/bunny_man.tscn" id="3_56bpl"]
 [ext_resource type="PackedScene" uid="uid://cppsnb2hsoyhc" path="res://scenes/game_over_hud.tscn" id="4_2c1u8"]
 [ext_resource type="PackedScene" uid="uid://d0gsjxd8x054e" path="res://prefabs/parallax_background.tscn" id="4_6js0r"]
 [ext_resource type="PackedScene" uid="uid://bty5ycjg1yyt6" path="res://prefabs/Lane.tscn" id="4_onicj"]
+[ext_resource type="Texture2D" uid="uid://dxk1ibpvxre3j" path="res://textures/pausebutton2.png" id="6_8xrr5"]
+[ext_resource type="Texture2D" uid="uid://drjrux441u74v" path="res://textures/pause.png" id="7_mphjm"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_1cdad")
@@ -40,8 +42,10 @@ offset_bottom = 95.0
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 process_mode = 2
+visible = false
 
 [node name="GameOverHud" parent="GameOver" instance=ExtResource("4_2c1u8")]
+offset_bottom = 8.0
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -57,3 +61,55 @@ collision_layer = 2
 
 [node name="Lane1" parent="." instance=ExtResource("4_onicj")]
 position = Vector2(0, -136)
+
+[node name="PauseButton" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseButton"]
+scale = Vector2(1, 1.01235)
+texture = ExtResource("6_8xrr5")
+centered = false
+
+[node name="Button" type="Button" parent="PauseButton"]
+offset_left = 1008.0
+offset_top = 16.0
+offset_right = 1120.0
+offset_bottom = 128.0
+flat = true
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseMenu"]
+scale = Vector2(1, 1.01235)
+texture = ExtResource("7_mphjm")
+centered = false
+
+[node name="Resume" type="Button" parent="PauseMenu"]
+offset_left = 384.0
+offset_top = 424.0
+offset_right = 768.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0.999996, 0.807706, 0.0313258, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.941176, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 48
+text = "RESUME"
+flat = true
+
+[node name="MainMenu" type="Button" parent="PauseMenu"]
+offset_left = 384.0
+offset_top = 512.0
+offset_right = 768.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0.999996, 0.807706, 0.0313258, 1)
+theme_override_colors/font_hover_color = Color(1, 0.941176, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 48
+text = "MAIN MENU"
+flat = true
+
+[connection signal="pressed" from="PauseButton/Button" to="." method="_paused"]
+[connection signal="pressed" from="PauseMenu/Resume" to="." method="_unpaused"]
+[connection signal="pressed" from="PauseMenu/MainMenu" to="." method="_return_main_menu"]

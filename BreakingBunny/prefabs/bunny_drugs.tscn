@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://5ktt6dn5vga5"]
 
-[ext_resource type="Texture2D" uid="uid://wajy0tcvtpve" path="res://textures/drug.png" id="1_68iv8"]
+[ext_resource type="Texture2D" uid="uid://dloxmyq5xp5ia" path="res://textures/BunnyDrug.png" id="1_ufiww"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqygx"]
-size = Vector2(80, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ps71"]
+radius = 17.8564
+height = 79.4256
 
 [node name="bunnyDrugs" type="Area2D"]
 collision_layer = 0
@@ -11,10 +12,11 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 16)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("1_68iv8")
+position = Vector2(-6.77626e-21, 64)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_ufiww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_xqygx")
+position = Vector2(8, 72)
+rotation = -0.523599
+shape = SubResource("CapsuleShape2D_6ps71")

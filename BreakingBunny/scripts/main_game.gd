@@ -138,6 +138,7 @@ func _start_game():
 	$Lane2.position = Vector2i(0, -88)
 	$Lane3.position = Vector2i(0, 0)
 	$GameOver.hide()
+	$PauseMenu.hide()
 
 func _show_stat():
 	$HUD.get_node("Score").text = "SCORE: " + str(score / SCORE_MODIFIER)
@@ -196,7 +197,7 @@ func _generate_drugs():
 		var drug = bunnyDrug.instantiate()
 		var drugHeight = drug.get_node("Sprite2D").texture.get_height()
 		var drugScale = drug.get_node("Sprite2D").scale
-		var drugXPos = screenSize.x + score + randi_range(20000, 30000)
+		var drugXPos = screenSize.x + score + randi_range(0, 100)
 		var drugYPos = screenSize.y - (laneHeight * randi_range(1, 3) - Y_OFFSET)  - (drugHeight * drugScale.y / 2)
 		lastDrug = drug
 		_create_drug(drug, drugXPos, drugYPos)
@@ -232,3 +233,15 @@ func _game_over():
 	save_game()	
 	get_tree().paused = true
 	$GameOver.show()
+
+func _paused():
+	get_tree().paused = true
+	$PauseMenu.show()
+
+func _unpaused():
+	get_tree().paused = false
+	$PauseMenu.hide()
+
+func _return_main_menu():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

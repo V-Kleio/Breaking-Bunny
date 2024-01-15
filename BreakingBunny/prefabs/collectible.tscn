@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://csica2fo8y1dg"]
 
-[ext_resource type="Texture2D" uid="uid://bg8kep6tkon3a" path="res://textures/magic_crystal.png" id="1_sj2p6"]
+[ext_resource type="Texture2D" uid="uid://ba1ie5lnyxj3o" path="res://textures/Cash.png" id="1_6e5ka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meva4"]
-size = Vector2(103, 43)
+size = Vector2(96.3801, 46.8372)
 
 [node name="Collectible" type="Area2D"]
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-2.38419e-07, 3.8147e-06)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("1_sj2p6")
+position = Vector2(-4, 111)
+texture = ExtResource("1_6e5ka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 33.5)
+position = Vector2(-1.02451, 112.376)
+rotation = -0.523599
 shape = SubResource("RectangleShape2D_meva4")
