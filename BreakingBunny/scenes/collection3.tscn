@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=3 uid="uid://bk3o2x1bgrxkg"]
+
+[ext_resource type="Script" path="res://scripts/collection3.gd" id="1_i8fb6"]
+[ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_dsdeu"]
+[ext_resource type="Texture2D" uid="uid://c7pq50eib6nh7" path="res://textures/title.png" id="3_jsmyv"]
+[ext_resource type="Texture2D" uid="uid://kxlt41hqleww" path="res://textures/Reference/Collection/Page 3/32-KoiwaiYotsuba.png" id="4_6aang"]
+[ext_resource type="Texture2D" uid="uid://42q48u5nqqyv" path="res://textures/back.png" id="4_718r4"]
+[ext_resource type="Texture2D" uid="uid://0lf0jfmtjmu2" path="res://textures/back-hover.png" id="5_xvkoe"]
+[ext_resource type="Texture2D" uid="uid://dspyxqrtenwq1" path="res://textures/Collection/Page 3/page3.png" id="6_ribgc"]
+[ext_resource type="Texture2D" uid="uid://ci5nmh1rryux5" path="res://textures/ui stuff/collection/arrow-left.png" id="7_gl7v3"]
+[ext_resource type="Texture2D" uid="uid://c4chc8oo2n3mx" path="res://textures/Collection/Page 3/31-TheCops.png" id="9_haxst"]
+[ext_resource type="Texture2D" uid="uid://dwkj4ytwaxqdr" path="res://textures/Collection/Page 3/32-KoiwaiYotsuba.png" id="10_4vq3o"]
+[ext_resource type="Texture2D" uid="uid://ddvi2q5a8kqvc" path="res://textures/Collection/card/31-TheCops-card.png" id="11_lpfxy"]
+[ext_resource type="Texture2D" uid="uid://bosh5ajmw0fux" path="res://textures/Collection/card/32-KoiwaiYotsuba-card.png" id="12_ll2dv"]
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8fb6")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dsdeu")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_jsmyv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_6aang")
+
+[node name="Page" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.5
+offset_top = -40.0
+offset_right = 79.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_ribgc")
+
+[node name="Left" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture_normal = ExtResource("7_gl7v3")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_right = 200.0
+grow_vertical = 0
+texture_normal = ExtResource("4_718r4")
+texture_pressed = ExtResource("5_xvkoe")
+texture_hover = ExtResource("5_xvkoe")
+
+[node name="Cops" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 280.0
+offset_right = 311.0
+offset_bottom = 498.0
+texture_normal = ExtResource("9_haxst")
+
+[node name="Yotsuba" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 280.0
+offset_right = 541.0
+offset_bottom = 531.0
+texture_normal = ExtResource("10_4vq3o")
+
+[node name="CopsCard" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="CopsCard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -276.0
+offset_right = 189.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_lpfxy")
+
+[node name="YotsubaCard" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="YotsubaCard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -276.0
+offset_right = 189.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_ll2dv")
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Cops" to="." method="_on_cops_pressed"]
+[connection signal="pressed" from="Yotsuba" to="." method="_on_yotsuba_pressed"]
+[connection signal="pressed" from="CopsCard" to="." method="_on_cops_card_pressed"]
+[connection signal="pressed" from="YotsubaCard" to="." method="_on_yotsuba_card_pressed"]
