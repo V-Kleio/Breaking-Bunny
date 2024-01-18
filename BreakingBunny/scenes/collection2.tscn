@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpoge22cts1hr"]
+[gd_scene load_steps=25 format=3 uid="uid://bpoge22cts1hr"]
 
 [ext_resource type="Script" path="res://scripts/collection2.gd" id="1_rn17u"]
 [ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_6usfq"]
@@ -10,14 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://dbo0smint0jpr" path="res://textures/ui stuff/collection/arrow-hover-left.png" id="8_671by"]
 [ext_resource type="Texture2D" uid="uid://qo4rqda75n4q" path="res://textures/ui stuff/collection/arrow-right.png" id="9_xloui"]
 [ext_resource type="Texture2D" uid="uid://bk5kyticdsndj" path="res://textures/ui stuff/collection/arrow-hover-right.png" id="10_1go5p"]
-[ext_resource type="Texture2D" uid="uid://vl4irv4jxp1r" path="res://textures/Collection/Page 2/21-TheBunny.png" id="11_yavdp"]
-[ext_resource type="Texture2D" uid="uid://et76ycijesjw" path="res://textures/Collection/Page 2/22-TheFriend.png" id="12_kby4k"]
-[ext_resource type="Texture2D" uid="uid://bbvy8j7u8a16f" path="res://textures/Collection/Page 2/23-HappySubstance.png" id="13_jxc3u"]
-[ext_resource type="Texture2D" uid="uid://ufhlfogotoco" path="res://textures/Collection/Page 2/24-Soda.png" id="14_ln4ve"]
+[ext_resource type="Texture2D" uid="uid://545rgx3t7lcl" path="res://textures/Collection/21.png" id="11_b75ay"]
+[ext_resource type="Texture2D" uid="uid://buwc7ctvm8u7x" path="res://textures/Collection/21-hover.png" id="12_ks0ix"]
+[ext_resource type="Texture2D" uid="uid://sxkyydtcvk52" path="res://textures/Collection/locked.png" id="13_4uvrv"]
+[ext_resource type="Texture2D" uid="uid://w3obuglc28ks" path="res://textures/Collection/22.png" id="14_xd7er"]
+[ext_resource type="Texture2D" uid="uid://c6b57paboh70y" path="res://textures/Collection/22-hover.png" id="15_1u4fb"]
 [ext_resource type="Texture2D" uid="uid://cfptqxt8vmwhm" path="res://textures/Collection/card/21-TheBunny-card.png" id="15_bfkca"]
+[ext_resource type="Texture2D" uid="uid://dt7fcfuieq2mk" path="res://textures/Collection/23.png" id="16_i86o2"]
 [ext_resource type="Texture2D" uid="uid://c3nh46k2ek2nc" path="res://textures/Collection/card/22-TheFriend-card.png" id="16_mc38i"]
+[ext_resource type="Texture2D" uid="uid://dcjrvk0opn127" path="res://textures/Collection/23-hover.png" id="17_a36ym"]
 [ext_resource type="Texture2D" uid="uid://b6jfuo4pi7qcf" path="res://textures/Collection/card/23-HappySubstance-card.png" id="17_pj8rj"]
+[ext_resource type="Texture2D" uid="uid://uxpn62ppqhm8" path="res://textures/Collection/24.png" id="18_2jnmm"]
 [ext_resource type="Texture2D" uid="uid://d2klb6a82pogu" path="res://textures/Collection/card/24-Soda-card.png" id="18_bcp1j"]
+[ext_resource type="FontVariation" uid="uid://bxtjq3oprm7rv" path="res://UI Font.tres" id="19_ju148"]
+[ext_resource type="Texture2D" uid="uid://bwmfxbpnvmqlr" path="res://textures/Collection/24-hover.png" id="19_rsk8r"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -100,35 +106,99 @@ texture_hover = ExtResource("5_4y7i0")
 
 [node name="Bunny" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 280.0
-offset_right = 321.0
-offset_bottom = 498.0
-texture_normal = ExtResource("11_yavdp")
+offset_left = 111.0
+offset_top = 250.0
+offset_right = 325.0
+offset_bottom = 516.0
+texture_normal = ExtResource("11_b75ay")
+texture_hover = ExtResource("12_ks0ix")
+texture_disabled = ExtResource("13_4uvrv")
+
+[node name="25" type="Label" parent="Bunny"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Friend" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 280.0
-offset_right = 560.0
-offset_bottom = 498.0
-texture_normal = ExtResource("12_kby4k")
+offset_left = 344.0
+offset_top = 250.0
+offset_right = 566.0
+offset_bottom = 516.0
+texture_normal = ExtResource("14_xd7er")
+texture_hover = ExtResource("15_1u4fb")
+texture_disabled = ExtResource("13_4uvrv")
+
+[node name="50" type="Label" parent="Friend"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Drugs" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 624.0
-offset_top = 280.0
-offset_right = 802.0
-offset_bottom = 529.0
-texture_normal = ExtResource("13_jxc3u")
+offset_left = 592.0
+offset_top = 250.0
+offset_right = 810.0
+offset_bottom = 549.0
+texture_normal = ExtResource("16_i86o2")
+texture_hover = ExtResource("17_a36ym")
+texture_disabled = ExtResource("13_4uvrv")
+
+[node name="75" type="Label" parent="Drugs"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Soda" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 864.0
-offset_top = 280.0
-offset_right = 1021.0
-offset_bottom = 498.0
-texture_normal = ExtResource("14_ln4ve")
+offset_left = 832.0
+offset_top = 250.0
+offset_right = 1046.0
+offset_bottom = 518.0
+texture_normal = ExtResource("18_2jnmm")
+texture_hover = ExtResource("19_rsk8r")
+texture_disabled = ExtResource("13_4uvrv")
+
+[node name="100" type="Label" parent="Soda"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="BunnyCard" type="Button" parent="."]
 visible = false
@@ -225,6 +295,22 @@ offset_bottom = 276.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_bcp1j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="totalCollectible" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("19_ju148")
+
+[node name="totalPowerUps" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("19_ju148")
+
+[node name="highScore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("19_ju148")
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

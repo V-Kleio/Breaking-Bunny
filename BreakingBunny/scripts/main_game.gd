@@ -143,7 +143,7 @@ func _start_game():
 func _show_stat():
 	$HUD.get_node("Score").text = "SCORE: " + str(score / SCORE_MODIFIER)
 	$HUD.get_node("Collectible").text = "Collectible: " + str(collectibleCounter)
-	$HUD.get_node("drug").text = "Drug: " + str(drugCounter)
+	$HUD.get_node("drug").text = "Power Up: " + str(drugCounter)
 	
 func _generate_obstacle():
 	if obstacles.is_empty() or lastObstacle.position.x < score + randi_range(400, 600):

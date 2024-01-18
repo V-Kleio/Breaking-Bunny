@@ -1,9 +1,32 @@
 extends Control
 
+var high_score
+var totalCollectible
+var totalDrugs
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var save_file = FileAccess.open("user://save.data", FileAccess.READ)
+	if save_file!=null:
+		high_score = save_file.get_32()
+		totalCollectible = save_file.get_32()
+		totalDrugs = save_file.get_32()
+	else: 
+		high_score = 0
+		totalCollectible = 0
+		totalDrugs = 0
+	$VBoxContainer/totalCollectible.text = "Total Collectibles: " + str(totalCollectible)
+	$VBoxContainer/totalPowerUps.text = "Total Power Ups: " + str(totalDrugs)
+	$VBoxContainer/highScore.text = "High Score: " + str(high_score)
+	
+	if totalDrugs < 10:
+		$Cops.disabled = true
+		$"Cops/10".text = "10 Power Ups"
+	if totalDrugs < 20:
+		$Yotsuba.disabled = true
+		$"Yotsuba/20".text = "20 Power Ups"
+		 # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
