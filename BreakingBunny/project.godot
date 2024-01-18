@@ -29,6 +29,10 @@ window/layer_1="Lane 1"
 
 project/assembly_name="Bunny_Town"
 
+[gui]
+
+theme/custom_font="res://UI Font.tres"
+
 [input]
 
 up={

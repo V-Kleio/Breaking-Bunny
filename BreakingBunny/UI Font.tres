@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bxtjq3oprm7rv"]
+
+[ext_resource type="FontFile" uid="uid://bcv3cqiw1dyw6" path="res://textures/PixCon.ttf" id="1_0xj40"]
+
+[resource]
+base_font = ExtResource("1_0xj40")

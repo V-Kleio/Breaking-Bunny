@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://be3m47k7edqip"]
+[gd_scene load_steps=23 format=3 uid="uid://be3m47k7edqip"]
 
 [ext_resource type="Script" path="res://scripts/collection.gd" id="1_kc845"]
 [ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_7h6wx"]
@@ -8,14 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://b55n1kj0opfav" path="res://textures/Collection/Page 1/page1.png" id="6_h6oim"]
 [ext_resource type="Texture2D" uid="uid://qo4rqda75n4q" path="res://textures/ui stuff/collection/arrow-right.png" id="7_cwvrw"]
 [ext_resource type="Texture2D" uid="uid://bk5kyticdsndj" path="res://textures/ui stuff/collection/arrow-hover-right.png" id="8_yqwf6"]
-[ext_resource type="Texture2D" uid="uid://r8hgmo7lpn88" path="res://textures/Collection/Page 1/12-Story#2.png" id="9_ev7y2"]
-[ext_resource type="Texture2D" uid="uid://ylbjdaps28rq" path="res://textures/Collection/Page 1/11-Story#1.png" id="10_s6kwh"]
-[ext_resource type="Texture2D" uid="uid://nenq7iny7jrt" path="res://textures/Collection/Page 1/13-Gilang.png" id="11_325hi"]
-[ext_resource type="Texture2D" uid="uid://b4vgnpaxnap8h" path="res://textures/Collection/Page 1/14-BrandeCity.png" id="12_u48ex"]
+[ext_resource type="Texture2D" uid="uid://c5gmqpl5dctge" path="res://textures/Collection/11.png" id="9_p0xom"]
+[ext_resource type="Texture2D" uid="uid://kdvihc4dyqs0" path="res://textures/Collection/11-hover.png" id="10_57o04"]
+[ext_resource type="Texture2D" uid="uid://sxkyydtcvk52" path="res://textures/Collection/locked.png" id="11_mv2b0"]
+[ext_resource type="Texture2D" uid="uid://2c8ukcwt3ftu" path="res://textures/Collection/12.png" id="12_sbbi2"]
+[ext_resource type="Texture2D" uid="uid://b4hooeop35sc0" path="res://textures/Collection/12-hover.png" id="13_4i71a"]
 [ext_resource type="Texture2D" uid="uid://cc6m2bv3xwojv" path="res://textures/Collection/card/11-Story#1-card.png" id="13_nsxae"]
+[ext_resource type="Texture2D" uid="uid://bpcticwwpvqxp" path="res://textures/Collection/13.png" id="14_bs7ik"]
 [ext_resource type="Texture2D" uid="uid://caoxxwgejvcsr" path="res://textures/Collection/card/12-Story#2-card.png" id="14_txdxx"]
 [ext_resource type="Texture2D" uid="uid://dfmv04i1egktj" path="res://textures/Collection/card/13-Gilang-card.png" id="15_aar81"]
+[ext_resource type="Texture2D" uid="uid://blktrkmr6jfl5" path="res://textures/Collection/13-hover.png" id="15_bjyej"]
+[ext_resource type="Texture2D" uid="uid://01gfbpqpwaw0" path="res://textures/Collection/14.png" id="16_fflew"]
 [ext_resource type="Texture2D" uid="uid://cpokaayxepopl" path="res://textures/Collection/card/14-BrandeCity-card.png" id="16_p2idg"]
+[ext_resource type="Texture2D" uid="uid://cg74n6p7mn2b2" path="res://textures/Collection/14-hover.png" id="17_7yypj"]
+[ext_resource type="FontVariation" uid="uid://bxtjq3oprm7rv" path="res://UI Font.tres" id="18_w7pkt"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -86,35 +92,99 @@ texture_hover = ExtResource("4_hlkhp")
 
 [node name="Story1" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 280.0
-offset_right = 309.0
-offset_bottom = 499.0
-texture_normal = ExtResource("10_s6kwh")
+offset_left = 111.0
+offset_top = 250.0
+offset_right = 325.0
+offset_bottom = 520.0
+texture_normal = ExtResource("9_p0xom")
+texture_hover = ExtResource("10_57o04")
+texture_disabled = ExtResource("11_mv2b0")
+
+[node name="10k" type="Label" parent="Story1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Story2" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 280.0
-offset_right = 543.0
-offset_bottom = 499.0
-texture_normal = ExtResource("9_ev7y2")
+offset_left = 343.0
+offset_top = 250.0
+offset_right = 557.0
+offset_bottom = 518.0
+texture_normal = ExtResource("12_sbbi2")
+texture_hover = ExtResource("13_4i71a")
+texture_disabled = ExtResource("11_mv2b0")
+
+[node name="20k" type="Label" parent="Story2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Gilang" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 624.0
-offset_top = 280.0
-offset_right = 781.0
-offset_bottom = 497.0
-texture_normal = ExtResource("11_325hi")
+offset_left = 583.0
+offset_top = 250.0
+offset_right = 797.0
+offset_bottom = 517.0
+texture_normal = ExtResource("14_bs7ik")
+texture_hover = ExtResource("15_bjyej")
+texture_disabled = ExtResource("11_mv2b0")
+
+[node name="30k" type="Label" parent="Gilang"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="City" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 280.0
-offset_right = 1013.0
-offset_bottom = 530.0
-texture_normal = ExtResource("12_u48ex")
+offset_left = 815.0
+offset_top = 250.0
+offset_right = 1029.0
+offset_bottom = 550.0
+texture_normal = ExtResource("16_fflew")
+texture_hover = ExtResource("17_7yypj")
+texture_disabled = ExtResource("11_mv2b0")
+
+[node name="40k" type="Label" parent="City"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Story1Card" type="Button" parent="."]
 visible = false
@@ -211,6 +281,23 @@ offset_bottom = 276.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_p2idg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="totalCollectible" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_w7pkt")
+
+[node name="totalPowerUps" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_w7pkt")
+
+[node name="highScore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_w7pkt")
 
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
