@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ba1ie5lnyxj3o" path="res://textures/Cash.png" id="1_6e5ka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meva4"]
-size = Vector2(96.3801, 46.8372)
+size = Vector2(87.6073, 46.8372)
 
 [node name="Collectible" type="Area2D"]
 collision_mask = 3
@@ -14,6 +14,5 @@ position = Vector2(-4, 111)
 texture = ExtResource("1_6e5ka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.02451, 112.376)
-rotation = -0.523599
+position = Vector2(-3.80364, 124)
 shape = SubResource("RectangleShape2D_meva4")

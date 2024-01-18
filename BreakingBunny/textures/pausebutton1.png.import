@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg8kep6tkon3a"
-path="res://.godot/imported/magic_crystal.png-e3a75bc5e977ea467edf2aace9514fec.ctex"
+uid="uid://0q5n3nwppejb"
+path="res://.godot/imported/pausebutton1.png-b7d5e633e92be4c36715cc8d4dc2ec3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/magic_crystal.png"
-dest_files=["res://.godot/imported/magic_crystal.png-e3a75bc5e977ea467edf2aace9514fec.ctex"]
+source_file="res://textures/pausebutton1.png"
+dest_files=["res://.godot/imported/pausebutton1.png-b7d5e633e92be4c36715cc8d4dc2ec3a.ctex"]
 
 [params]
 

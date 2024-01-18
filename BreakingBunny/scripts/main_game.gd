@@ -215,6 +215,9 @@ func _enable_drug(body):
 		for drug in bunnyDrugs:
 			drug.visible = false
 		$Bunny.collision_layer = 2
+		$BGM.stream_paused = !$BGM.stream_paused
+		$CollectPowerUp.play()
+		$PowerUp.play()
 		$Bunny.get_node("Sprite2D").animation = "drugPower"
 		enhanceSpeed = 15
 		$Timer.start()
@@ -223,6 +226,8 @@ func _enable_drug(body):
 func _drug_end():
 	$Bunny.get_node("Sprite2D").animation = "default"
 	enhanceSpeed = 0
+	$BGM.stream_paused = !$BGM.stream_paused
+	$PowerUp.stop()
 	await get_tree().create_timer(1).timeout
 	$Bunny.collision_layer = 1
 

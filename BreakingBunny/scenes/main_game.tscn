@@ -1,16 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://c71o6uqbpf4e6"]
+[gd_scene load_steps=15 format=3 uid="uid://c71o6uqbpf4e6"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_1cdad"]
 [ext_resource type="PackedScene" uid="uid://s2bql4gu20id" path="res://prefabs/bunny_man.tscn" id="3_56bpl"]
 [ext_resource type="PackedScene" uid="uid://cppsnb2hsoyhc" path="res://scenes/game_over_hud.tscn" id="4_2c1u8"]
 [ext_resource type="PackedScene" uid="uid://d0gsjxd8x054e" path="res://prefabs/parallax_background.tscn" id="4_6js0r"]
 [ext_resource type="PackedScene" uid="uid://bty5ycjg1yyt6" path="res://prefabs/Lane.tscn" id="4_onicj"]
-[ext_resource type="Texture2D" uid="uid://dxk1ibpvxre3j" path="res://textures/pausebutton2.png" id="6_8xrr5"]
+[ext_resource type="Texture2D" uid="uid://bkxck4gfe1fab" path="res://textures/pausebutton2.png" id="6_8xrr5"]
+[ext_resource type="Texture2D" uid="uid://0q5n3nwppejb" path="res://textures/pausebutton1.png" id="6_582g2"]
 [ext_resource type="Texture2D" uid="uid://drjrux441u74v" path="res://textures/pause.png" id="7_mphjm"]
 [ext_resource type="AudioStream" uid="uid://knqisan081dd" path="res://audio/bgm.wav" id="8_463e8"]
 [ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="9_yubgg"]
 [ext_resource type="AudioStream" uid="uid://dn2kykwhimb8f" path="res://audio/crash.wav" id="10_x7mfu"]
 [ext_resource type="AudioStream" uid="uid://bja8w8ye3nmmk" path="res://audio/collect.wav" id="11_advog"]
+[ext_resource type="AudioStream" uid="uid://cmt6kfe2gomdn" path="res://audio/powerup.wav" id="12_60byv"]
+[ext_resource type="AudioStream" uid="uid://dvf1ua4hsxnw6" path="res://audio/powerup_bgm.wav" id="12_fb3a4"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_1cdad")
@@ -68,17 +71,13 @@ position = Vector2(0, -136)
 
 [node name="PauseButton" type="CanvasLayer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="PauseButton"]
-scale = Vector2(1, 1.01235)
-texture = ExtResource("6_8xrr5")
-centered = false
-
-[node name="Button" type="Button" parent="PauseButton"]
-offset_left = 1008.0
-offset_top = 16.0
-offset_right = 1120.0
-offset_bottom = 128.0
-flat = true
+[node name="Button" type="TextureButton" parent="PauseButton"]
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1150.0
+offset_bottom = 164.0
+texture_normal = ExtResource("6_582g2")
+texture_hover = ExtResource("6_8xrr5")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -135,6 +134,16 @@ bus = &"SFX"
 [node name="Collect" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("11_advog")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="PowerUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fb3a4")
+volume_db = -20.0
+bus = &"Music"
+
+[node name="CollectPowerUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_60byv")
 volume_db = -20.0
 bus = &"SFX"
 
