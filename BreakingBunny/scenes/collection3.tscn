@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bk3o2x1bgrxkg"]
+[gd_scene load_steps=19 format=3 uid="uid://bk3o2x1bgrxkg"]
 
 [ext_resource type="Script" path="res://scripts/collection3.gd" id="1_i8fb6"]
 [ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_dsdeu"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bosh5ajmw0fux" path="res://textures/Collection/card/32-KoiwaiYotsuba-card.png" id="12_ll2dv"]
 [ext_resource type="FontVariation" uid="uid://bxtjq3oprm7rv" path="res://UI Font.tres" id="13_rx5nf"]
 [ext_resource type="Texture2D" uid="uid://i17lxvbdsh5d" path="res://textures/Collection/32-hover.png" id="13_ycahv"]
+[ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="18_fha04"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -173,6 +174,7 @@ grow_vertical = 2
 texture = ExtResource("12_ll2dv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -187,6 +189,11 @@ theme_override_fonts/font = ExtResource("13_rx5nf")
 [node name="highScore" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("13_rx5nf")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_fha04")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

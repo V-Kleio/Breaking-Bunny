@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bpoge22cts1hr"]
+[gd_scene load_steps=26 format=3 uid="uid://bpoge22cts1hr"]
 
 [ext_resource type="Script" path="res://scripts/collection2.gd" id="1_rn17u"]
 [ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_6usfq"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://d2klb6a82pogu" path="res://textures/Collection/card/24-Soda-card.png" id="18_bcp1j"]
 [ext_resource type="FontVariation" uid="uid://bxtjq3oprm7rv" path="res://UI Font.tres" id="19_ju148"]
 [ext_resource type="Texture2D" uid="uid://bwmfxbpnvmqlr" path="res://textures/Collection/24-hover.png" id="19_rsk8r"]
+[ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="25_6jryx"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -297,6 +298,7 @@ grow_vertical = 2
 texture = ExtResource("18_bcp1j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -311,6 +313,11 @@ theme_override_fonts/font = ExtResource("19_ju148")
 [node name="highScore" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("19_ju148")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_6jryx")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

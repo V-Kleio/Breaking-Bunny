@@ -68,7 +68,6 @@ collision_layer = 2
 position = Vector2(0, -136)
 
 [node name="PauseButton" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Button" type="TextureButton" parent="PauseButton"]
 offset_left = 976.0

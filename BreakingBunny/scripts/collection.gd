@@ -39,39 +39,59 @@ func _process(delta):
 
 
 func _on_back_button_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") # Replace with function body.
 
 
 func _on_right_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/collection2.tscn") # Replace with function body.
 
 
 func _on_story_1_pressed():
+	$Click.play()
+	await $Click.finished
 	$Story1Card.show()
 
 func _on_story_1_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$Story1Card.hide()
 
 
 func _on_story_2_pressed():
+	$Click.play()
+	await $Click.finished
 	$Story2Card.show()
 
 
 func _on_gilang_pressed():
+	$Click.play()
+	await $Click.finished
 	$GilangCard.show()
 
 
 func _on_city_pressed():
+	$Click.play()
+	await $Click.finished
 	$CityCard.show()
 
 
 func _on_story_2_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$Story2Card.hide()
 
 
 func _on_city_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$CityCard.hide()
 
 
 func _on_gilang_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$GilangCard.hide()

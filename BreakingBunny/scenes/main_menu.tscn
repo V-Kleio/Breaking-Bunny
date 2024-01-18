@@ -80,16 +80,16 @@ texture_normal = ExtResource("9_hi7ib")
 texture_pressed = ExtResource("10_mia8g")
 texture_hover = ExtResource("10_mia8g")
 
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_3rd4h")
+volume_db = -20.0
+bus = &"SFX"
+
 [node name="MainMenuBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_f1evn")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
-
-[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_3rd4h")
-volume_db = -20.0
-bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]

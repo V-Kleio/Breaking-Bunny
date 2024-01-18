@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://be3m47k7edqip"]
+[gd_scene load_steps=24 format=3 uid="uid://be3m47k7edqip"]
 
 [ext_resource type="Script" path="res://scripts/collection.gd" id="1_kc845"]
 [ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_7h6wx"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpokaayxepopl" path="res://textures/Collection/card/14-BrandeCity-card.png" id="16_p2idg"]
 [ext_resource type="Texture2D" uid="uid://cg74n6p7mn2b2" path="res://textures/Collection/14-hover.png" id="17_7yypj"]
 [ext_resource type="FontVariation" uid="uid://bxtjq3oprm7rv" path="res://UI Font.tres" id="18_w7pkt"]
+[ext_resource type="AudioStream" uid="uid://c8n1wx3vp2tsv" path="res://audio/Select.wav" id="23_ffcfm"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -298,6 +299,11 @@ theme_override_fonts/font = ExtResource("18_w7pkt")
 [node name="highScore" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_w7pkt")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_ffcfm")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

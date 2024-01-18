@@ -34,24 +34,36 @@ func _process(delta):
 	pass
 
 func _on_back_button_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") # Replace with function body.
 
 
 func _on_left_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/collection2.tscn")
 
 
 func _on_cops_pressed():
+	$Click.play()
+	await $Click.finished
 	$CopsCard.show() # Replace with function body.
 
 
 func _on_yotsuba_pressed():
+	$Click.play()
+	await $Click.finished
 	$YotsubaCard.show() # Replace with function body.
 
 
 func _on_cops_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$CopsCard.hide() # Replace with function body.
 
 
 func _on_yotsuba_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$YotsubaCard.hide() # Replace with function body.

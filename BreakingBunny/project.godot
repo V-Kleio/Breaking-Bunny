@@ -13,7 +13,12 @@ config_version=5
 config/name="Breaking Bunny"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.878431, 0.839216, 0.6, 1)
+boot_splash/image="res://textures/yotsuba.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://textures/cover.png"
+boot_splash/minimum_display_time=1000
 
 [display]
 

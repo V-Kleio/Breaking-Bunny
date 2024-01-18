@@ -37,44 +37,66 @@ func _process(delta):
 	pass
 
 func _on_back_button_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") # Replace with function body.
 
 
 func _on_right_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/collection3.tscn") # Replace with function body.
 
 
 func _on_left_pressed():
+	$Click.play()
+	await $Click.finished
 	get_tree().change_scene_to_file("res://scenes/collection.tscn")
 
 
 func _on_bunny_pressed():
+	$Click.play()
+	await $Click.finished
 	$BunnyCard.show() # Replace with function body.
 
 
 func _on_friend_pressed():
+	$Click.play()
+	await $Click.finished
 	$FriendCard.show() # Replace with function body.
 
 
 func _on_drugs_pressed():
+	$Click.play()
+	await $Click.finished
 	$DrugsCard.show() # Replace with function body.
 
 
 func _on_soda_pressed():
+	$Click.play()
+	await $Click.finished
 	$SodaCard.show() # Replace with function body.
 
 
 func _on_bunny_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$BunnyCard.hide() # Replace with function body.
 
 
 func _on_friend_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$FriendCard.hide() # Replace with function body.
 
 
 func _on_drugs_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$DrugsCard.hide() # Replace with function body.
 
 
 func _on_soda_card_pressed():
+	$Click.play()
+	await $Click.finished
 	$SodaCard.hide() # Replace with function body.
