@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://be3m47k7edqip"]
+[gd_scene load_steps=17 format=3 uid="uid://be3m47k7edqip"]
 
 [ext_resource type="Script" path="res://scripts/collection.gd" id="1_kc845"]
 [ext_resource type="Texture2D" uid="uid://dhmnc3hqx0cub" path="res://textures/bg setting.png" id="2_7h6wx"]
 [ext_resource type="Texture2D" uid="uid://c7pq50eib6nh7" path="res://textures/title.png" id="2_brtxi"]
 [ext_resource type="Texture2D" uid="uid://42q48u5nqqyv" path="res://textures/back.png" id="3_n13iw"]
 [ext_resource type="Texture2D" uid="uid://0lf0jfmtjmu2" path="res://textures/back-hover.png" id="4_hlkhp"]
+[ext_resource type="Texture2D" uid="uid://b55n1kj0opfav" path="res://textures/Collection/Page 1/page1.png" id="6_h6oim"]
+[ext_resource type="Texture2D" uid="uid://qo4rqda75n4q" path="res://textures/ui stuff/collection/arrow-right.png" id="7_cwvrw"]
+[ext_resource type="Texture2D" uid="uid://bk5kyticdsndj" path="res://textures/ui stuff/collection/arrow-hover-right.png" id="8_yqwf6"]
+[ext_resource type="Texture2D" uid="uid://r8hgmo7lpn88" path="res://textures/Collection/Page 1/12-Story#2.png" id="9_ev7y2"]
+[ext_resource type="Texture2D" uid="uid://ylbjdaps28rq" path="res://textures/Collection/Page 1/11-Story#1.png" id="10_s6kwh"]
+[ext_resource type="Texture2D" uid="uid://nenq7iny7jrt" path="res://textures/Collection/Page 1/13-Gilang.png" id="11_325hi"]
+[ext_resource type="Texture2D" uid="uid://b4vgnpaxnap8h" path="res://textures/Collection/Page 1/14-BrandeCity.png" id="12_u48ex"]
+[ext_resource type="Texture2D" uid="uid://cc6m2bv3xwojv" path="res://textures/Collection/card/11-Story#1-card.png" id="13_nsxae"]
+[ext_resource type="Texture2D" uid="uid://caoxxwgejvcsr" path="res://textures/Collection/card/12-Story#2-card.png" id="14_txdxx"]
+[ext_resource type="Texture2D" uid="uid://dfmv04i1egktj" path="res://textures/Collection/card/13-Gilang-card.png" id="15_aar81"]
+[ext_resource type="Texture2D" uid="uid://cpokaayxepopl" path="res://textures/Collection/card/14-BrandeCity-card.png" id="16_p2idg"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -30,16 +41,184 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_brtxi")
 
+[node name="Page" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -648.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_h6oim")
+
+[node name="Right" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("7_cwvrw")
+texture_pressed = ExtResource("8_yqwf6")
+texture_hover = ExtResource("8_yqwf6")
+
 [node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -87.0
+offset_top = -85.0
 offset_right = 200.0
+offset_bottom = 2.0
 grow_vertical = 0
 texture_normal = ExtResource("3_n13iw")
 texture_pressed = ExtResource("4_hlkhp")
 texture_hover = ExtResource("4_hlkhp")
 
+[node name="Story1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 280.0
+offset_right = 309.0
+offset_bottom = 499.0
+texture_normal = ExtResource("10_s6kwh")
+
+[node name="Story2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 280.0
+offset_right = 543.0
+offset_bottom = 499.0
+texture_normal = ExtResource("9_ev7y2")
+
+[node name="Gilang" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 280.0
+offset_right = 781.0
+offset_bottom = 497.0
+texture_normal = ExtResource("11_325hi")
+
+[node name="City" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 280.0
+offset_right = 1013.0
+offset_bottom = 530.0
+texture_normal = ExtResource("12_u48ex")
+
+[node name="Story1Card" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Story1Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -276.0
+offset_right = 189.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_nsxae")
+
+[node name="Story2Card" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Story2Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -276.0
+offset_right = 189.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_txdxx")
+
+[node name="GilangCard" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GilangCard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -276.0
+offset_right = 189.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_aar81")
+
+[node name="CityCard" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CityCard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -276.0
+offset_right = 189.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_p2idg")
+
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Story1" to="." method="_on_story_1_pressed"]
+[connection signal="pressed" from="Story2" to="." method="_on_story_2_pressed"]
+[connection signal="pressed" from="Gilang" to="." method="_on_gilang_pressed"]
+[connection signal="pressed" from="City" to="." method="_on_city_pressed"]
+[connection signal="pressed" from="Story1Card" to="." method="_on_story_1_card_pressed"]
+[connection signal="pressed" from="Story2Card" to="." method="_on_story_2_card_pressed"]
+[connection signal="pressed" from="GilangCard" to="." method="_on_gilang_card_pressed"]
+[connection signal="pressed" from="CityCard" to="." method="_on_city_card_pressed"]
