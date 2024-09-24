@@ -15,7 +15,7 @@ This repository is a godot project about a game called Breaking Bunny. Embark on
 
 ## Instalation
 
-You can download the game in the release section.
+You can download the game in the release section or fork this repository.
 
 ## Contribution
 
