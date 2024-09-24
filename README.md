@@ -15,7 +15,7 @@ This repository is a godot project about a game called Breaking Bunny. Embark on
 
 ## Instalation
 
-You can download the game in the release section or fork this repository.
+You can download the game in the release section or fork this repository. You can also visit the game itch.io page: https://yotsuba4.itch.io/breaking-bunny
 
 ## Contribution
 
